@@ -29,35 +29,14 @@
                 },
             ],
 
-            timeSlider: 1.5 * 1000,
+            timeSlider: 3000,
             direction: 1,
             activeIndex: 0,
             idInterval: 0,
             isAutoplayActive: true,
         },
         methods: {
-            toggleAutoplay() {
-                if (this.isAutoplayActive) {
-                    this.stopAutoplay();
-                    this.isAutoplayActive = false;
-                } else {
-                    this.startAutoplay();
-                    this.isAutoplayActive = true;
-                }
-            },
 
-            startAutoplay() {
-                this.idInterval = this.setInterval(() => this.moveSlide(direction), this.timeSlider);
-            },
-            
-            stopAutoplay() {
-                clearInterval(this.idInterval);
-            },
-            
-            invertDirection() {
-                this.direction *= -1;
-            },
-            
             moveSlide(direction) {
                 if (direction > 0) {
                     this.activeIndex++;
@@ -72,32 +51,46 @@
                 }
             },
 
-            mouseEnter() {
-                stopAutoplay();
-            },
+        //     startAutoplay() {
+        //         this.idInterval = this.setInterval(() => this.moveSlide(direction), this.timeSlider);
+        //     },
 
-            mouseLeave() {
-                if (isAutoplayActive) {
-                    startAutoplay();
-                }
-            },
+        //     setInterval() {
+        //         (this.moveSlide(direction), this.timeSlider);  
+        //     }, 
+            
+        //     stopAutoplay() {
+        //         clearInterval(this.idInterval);
+        //     },
+            
+        //     invertDirection() {
+        //         this.direction *= -1;
+        //     },
 
-            invertDirection() {
-                invertDirection();
-            },
-        }
+        //    mouseenter() {
+        //     this.stopAutoplay()
+        //    },
+
+        //     mouseleave() {
+        //         if (this.isAutoplayActive) {
+        //             this.startAutoplay();
+        //         }
+        //     },
+
+        //     reverseButton() {
+        //         this.invertDirection();
+        //     }, 
+
+        //     startStop() {
+        //         if (isAutoplayActive) {
+        //             this.stopAutoplay();
+        //             isAutoplayActive = false;
+        //             this.innerHTML = 'Start';
+        //         } else {
+        //             this.startAutoplay();
+        //             isAutoplayActive = true;
+        //             this.innerHTML = 'Stop';
+        //         }
+        //     },
+        }            
     });
-
-// EVENT LISTENERS
-
-// const listThumbs = document.querySelectorAll('.thumb-img');
-// listThumbs.forEach((eleThumb, index) => {
-// 	eleThumb.addEventListener('click', () => {
-// 		listSlides[activeIndex].classList.remove('active');
-// 		listThumbs[activeIndex].classList.remove('active');
-// 		activeIndex = index;
-// 		listSlides[activeIndex].classList.add('active');
-// 		listThumbs[activeIndex].classList.add('active');
-// 		document.body.style.backgroundImage = `url('img/${arrImages[activeIndex].image}')`;
-// 	})
-// });

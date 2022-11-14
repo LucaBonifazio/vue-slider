@@ -24,6 +24,7 @@ body {
 }
 
 .slider {
+	display: flex;
 	height: 80%;
 	width: 60%;
 	max-width: 600px;
@@ -33,7 +34,7 @@ body {
 
 .slider .slider-viewer {
 	position: relative;
-	height: 80%;
+	width: 80%;
 }
 
 .slider .controls {
@@ -96,13 +97,14 @@ body {
 .slider .thumbs {
 	position: relative;
 	display: flex;
-	height: 20%;
+	flex-direction: column;
+	width: 20%;
 }
 
 .slider .thumb-img {
 	flex: 1 0 0;
 	min-width: 0;
-	height: 100%;
+	height: calc(100% / 5);
 	object-fit: cover;
 	object-position: center;
 	filter: brightness(.4);
