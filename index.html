@@ -28,8 +28,8 @@
 				</div>
 
 				<div class="thumbs">
-                    <div v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="slide" :class="i === activeIndex ? 'active' :''">
-                        <img :src="'img/' + objSlide.image" :alt="objSlide.title">
+                    <div v-for="(objSlide, i) in arrImages" :key="objSlide.image">
+						<img :src="'img/' + objSlide.image" class="thumb-img" :class="i === activeIndex ? 'active' : ''">
                     </div>
                 </div>
 			</div>

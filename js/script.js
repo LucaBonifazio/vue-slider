@@ -73,7 +73,7 @@
             },
 
             mouseEnter() {
-                stopAutoplay()
+                stopAutoplay();
             },
 
             mouseLeave() {
@@ -81,14 +81,14 @@
                     startAutoplay();
                 }
             },
+
+            invertDirection() {
+                invertDirection();
+            },
         }
     });
 
 // EVENT LISTENERS
-
-// document.querySelector('.btn-invert').addEventListener('click', () => invertDirection());
-
-// const listSlides = document.querySelectorAll('.slide');
 
 // const listThumbs = document.querySelectorAll('.thumb-img');
 // listThumbs.forEach((eleThumb, index) => {
