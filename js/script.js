@@ -87,6 +87,6 @@ new Vue({
         },
     },
     mounted() {
-        this.startAutoplay();
+        this.isAutoplayActive ? this.startAutoplay() : '';
     }
 });
