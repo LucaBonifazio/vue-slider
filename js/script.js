@@ -73,9 +73,9 @@ new Vue({
             clearInterval(this.idInterval);
         },
 
-        invertAutoPlay() {
-            this.direction *+ -1
-        },
+        invertAutoplay() {
+			this.direction *= -1;
+		},
 
         pauseAutoplay() {
             this.stopAutoplay();
