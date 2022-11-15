@@ -10,31 +10,33 @@
 	<script src="js/script.js" defer></script>
 </head>
 <body>
-	<div class="container-blur">
-		<div class="contents">
-			<div class="slider">
-				<div class="slider-viewer">
-					<div class="controls">
-						<button class="btn-left" @click="moveSlide(-1)">&lt;</button>
-						<button class="btn-right" @click="moveSlide(1)">&gt;</button>
+	<div class="background" :style="{backgroundImage: `url('img/${arrImages[activeIndex].image}')`}">
+		<div class="container-blur">
+			<div class="contents">
+				<div class="slider">
+					<div class="slider-viewer">
+						<div class="controls">
+							<button class="btn-left" @click="moveSlide(-1)">&lt;</button>
+							<button class="btn-right" @click="moveSlide(1)">&gt;</button>
+						</div>
+						<div v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="slide" :class="i === activeIndex ? 'active' :''">
+							<img :src="'img/' + objSlide.image" :alt="objSlide.title">
+							<div class="text">
+								<h2>{{ objSlide.title }}</h2>
+								<p>{{ objSlide.text }}</p>
+							</div>
+						</div>
 					</div>
-                    <div v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="slide" :class="i === activeIndex ? 'active' :''">
-                        <img :src="'img/' + objSlide.image" :alt="objSlide.title">
-                        <div class="text">
-                            <h2>{{ objSlide.title }}</h2>
-                            <p>{{ objSlide.text }}</p>
-                        </div>
-                    </div>
+	
+					<div class="thumbs">
+						<img :src="'img/' + objSlide.image" v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="thumb-img" :class="{active: i ===activeIndex}" @click="clickThumbs()">
+					</div>
 				</div>
-
-				<div class="thumbs">
-					<img :src="'img/' + objSlide.image" v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="thumb-img" :class="i === activeIndex ? 'active' : ''" @click="clickThumbs()">
-                </div>
-			</div>
-
-			<div class="btns">
-				<button class="btn-start-stop" data-functionality="stop" @click="startStop()">Stop</button>
-				<button class="btn-invert" @click="moveSlide()">Invert</button>
+	
+				<div class="btns">
+					<button class="btn-start-stop" data-functionality="stop" @click="startStop()">Stop</button>
+					<button class="btn-invert" @click="moveSlide()">Invert</button>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1,5 +1,5 @@
     new Vue({
-        el: '.container-blur',
+        el: '.background',
         data: {
             arrImages: [
                 {
@@ -51,9 +51,9 @@
                 }
             },
 
-        //     startAutoplay() {
-        //         this.idInterval = this.setInterval(() => this.moveSlide(direction), this.timeSlider);
-        //     },
+            // startAutoplay() {
+            //     this.idInterval = this.setInterval(() => this.moveSlide(direction), this.timeSlider);
+            // },
 
         //     setInterval() {
         //         (this.moveSlide(direction), this.timeSlider);  
