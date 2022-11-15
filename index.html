@@ -29,13 +29,13 @@
 					</div>
 	
 					<div class="thumbs">
-						<img :src="'img/' + objSlide.image" v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="thumb-img" :class="{active: i ===activeIndex}" @click="clickThumbs()">
+						<img :src="'img/' + objSlide.image" v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="thumb-img" :class="{active: i ===activeIndex}" @click="clickActiveIndex(i)">
 					</div>
 				</div>
 	
 				<div class="btns">
-					<button class="btn-start-stop" data-functionality="stop" @click="startStop()">Stop</button>
-					<button class="btn-invert" @click="moveSlide()">Invert</button>
+					<button class="btn-start-stop" @click="controlAutoplay">{{ isAutoplayActive ? 'STOP' : 'START' }}</button>
+					<button class="btn-invert" @click="invertAutoPlay()">Invert</button>
 				</div>
 			</div>
 		</div>

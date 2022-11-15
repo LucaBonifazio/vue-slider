@@ -114,3 +114,12 @@
 	border: 5px solid white;
 	filter: brightness(1);
 }
+
+.btn-start-stop,
+.btn-invert {
+	margin: .5rem;
+	width: 4rem;
+	height: 2rem;
+	border-radius: 2rem;
+	background-color: white;
+}
