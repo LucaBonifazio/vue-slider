@@ -13,7 +13,7 @@
 	<div class="background" :style="{backgroundImage: `url('img/${arrImages[activeIndex].image}')`}">
 		<div class="container-blur">
 			<div class="contents">
-				<div class="slider">
+				<div class="slider" @mouseenter="pauseAutoplay" @mouseleave="resumeAutoplay">
 					<div class="slider-viewer">
 						<div class="controls">
 							<button class="btn-left" @click="moveSlide(-1)">&lt;</button>

@@ -58,23 +58,32 @@ new Vue({
         controlAutoplay() {
             if (this.isAutoplayActive) {
                 this.stopAutoplay();
+                this.isAutoplayActive = false;
             } else {
                 this.startAutoplay();
+                this.isAutoplayActive = true;
             }
         },
 
         startAutoplay() {
             this.idInterval = setInterval(() => this.moveSlide(this.direction), this.timeSlider);
-            this.isAutoplayActive = true;
         },
 
         stopAutoplay() {
             clearInterval(this.idInterval);
-            this.isAutoplayActive = false;
         },
 
         invertAutoPlay() {
             this.direction *+ -1
+        },
+
+        pauseAutoplay() {
+            this.stopAutoplay();
+        },
+
+        resumeAutoplay() {
+            if (this.isAutoplayActive)
+            this.startAutoplay();
         },
     },
     mounted() {
