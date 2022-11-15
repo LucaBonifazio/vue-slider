@@ -76,5 +76,8 @@ new Vue({
         invertAutoPlay() {
             this.direction *+ -1
         },
+    },
+    mounted() {
+        this.startAutoplay();
     }
 });
